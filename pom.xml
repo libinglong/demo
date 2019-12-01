@@ -85,9 +85,9 @@
                 <configuration>
                     <dataSourceConfig>
                         <driverName>com.mysql.cj.jdbc.Driver</driverName>
-                        <url>jdbc:mysql://localhost:3306/saas_tenant?useUnicode=true&amp;useSSL=true&amp;characterEncoding=utf8&amp;autoReconnect=true</url>
+                        <url>jdbc:mysql://localhost:3306/saas_tenant?useUnicode=true&amp;useSSL=true&amp;characterEncoding=utf8&amp;autoReconnect=true&amp;serverTimezone=Asia/Shanghai</url>
                         <username>root</username>
-                        <password>1234</password>
+                        <password>root</password>
                     </dataSourceConfig>
                     <parentPackage>com.huli.saas.multirenter.autogen</parentPackage>
                     <modelName>tenants</modelName>

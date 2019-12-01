@@ -6,6 +6,7 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import java.io.Serializable;
 import lombok.Data;
 import lombok.experimental.Accessors;
+import java.time.LocalDateTime;
 
 /**
  * <p>
@@ -13,31 +14,31 @@ import lombok.experimental.Accessors;
  * </p>
  *
  * @author plugin
- * @since 2019-11-25
+ * @since 2019-12-01
  */
 
 @Data
 @Accessors(chain = true)
-public class ClientProject implements Serializable {
+public class Person implements Serializable {
 
     private static final long serialVersionUID=1L;
 
     /**
-     * 主键
+     * 
      */
     @TableId(type = IdType.AUTO)
-    private Long id;
+    private Integer id;
     /**
-     * 客户端id
+     * 
      */
-    private Long clientId;
+    private String name;
     /**
-     * 项目id
+     * 
      */
-    private Long projectId;
+    private Integer age;
     /**
-     * 运行时参数
+     * 
      */
-    private String context;
+    private LocalDateTime createtime;
 
 }
