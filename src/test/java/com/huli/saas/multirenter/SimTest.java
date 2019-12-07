@@ -15,8 +15,10 @@ public class SimTest {
 
     @Test
     public void fun() throws NoSuchAlgorithmException, InvalidKeySpecException {
-        KeyPairGenerator keyPairGen = KeyPairGenerator.getInstance("RSA");
-        keyPairGen.initialize(1024);
+        int count = 1;
+        while(true){
+            count++;
+        }
     }
 
 }

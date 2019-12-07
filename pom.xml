@@ -23,7 +23,15 @@
 
     <dependencies>
 
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
 
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
 
         <dependency>
             <groupId>mysql</groupId>
@@ -85,13 +93,13 @@
                 <configuration>
                     <dataSourceConfig>
                         <driverName>com.mysql.cj.jdbc.Driver</driverName>
-                        <url>jdbc:mysql://localhost:3306/saas_tenant?useUnicode=true&amp;useSSL=true&amp;characterEncoding=utf8&amp;autoReconnect=true&amp;serverTimezone=Asia/Shanghai</url>
+                        <url>jdbc:mysql://192.168.170.16:3306/saas_tenant?useUnicode=true&amp;useSSL=true&amp;characterEncoding=utf8&amp;autoReconnect=true&amp;serverTimezone=Asia/Shanghai</url>
                         <username>root</username>
                         <password>root</password>
                     </dataSourceConfig>
                     <parentPackage>com.huli.saas.multirenter.autogen</parentPackage>
                     <modelName>tenants</modelName>
-                    <tablePattern>%</tablePattern>
+                    <tablePattern>person1</tablePattern>
                 </configuration>
             </plugin>
         </plugins>
