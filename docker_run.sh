@@ -2,9 +2,9 @@
 
 type=snapshot
 port=8080
-version=`/opt/maven/bin/mvn -q -Dexec.executable="echo" -Dexec.args='${project.version}' --non-recursive org.codehaus.mojo:exec-maven-plugin:1.6.0:exec`
+version=`mvn -q -Dexec.executable="echo" -Dexec.args='${project.version}' --non-recursive org.codehaus.mojo:exec-maven-plugin:1.6.0:exec`
 
-/opt/maven/bin/mvn -U clean package -f pom.xml
+mvn -U clean package -f pom.xml
 docker build -t saas/houseprice:${version} --build-arg JAR_FILE=houseprice-svc/target/houseprice.jar .
 if docker ps --format '{{.Names}}' | egrep "^saas-houseprice-${type}$" &> /dev/null; then
     docker stop saas-houseprice-${type}
