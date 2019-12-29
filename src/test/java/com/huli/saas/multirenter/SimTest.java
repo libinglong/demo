@@ -15,10 +15,7 @@ public class SimTest {
 
     @Test
     public void fun() throws NoSuchAlgorithmException, InvalidKeySpecException {
-        int count = 1;
-        while(true){
-            count++;
-        }
+
     }
 
 }
