@@ -15,4 +15,3 @@ job_build:
   only:
   - develop
   - tags
-  
