@@ -1,0 +1,20 @@
+variables:
+  SONAR_DEV_HOST: "http://192.168.100.10:9000/sonar"
+  SONAR_RC_HOST: "http://10.19.37.203:9000/sonar"
+cache:
+  paths:
+  - target/
+stages:
+- build_dev
+
+job_build:
+  stage: build_dev
+  tags:
+  - gitlab.runner1.tag
+  script:
+  - git fetch --tags
+  - version=`git tag  --points-at HEAD`
+  - sh dockerRun.sh ${version}
+  only:
+  - develop
+  - tags
