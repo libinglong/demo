@@ -6,7 +6,8 @@ port=8080
 version=`mvn -q -Dexec.executable="echo" -Dexec.args='${project.version}' --non-recursive org.codehaus.mojo:exec-maven-plugin:1.6.0:exec`
 
 mvn -U clean package -f pom.xml -Dmaven.test.skip=true
-docker build -t saas/multi-renter:${version} --build-arg JAR_FILE=multi-renter-svc/target/multi-renter.jar .
+pwd
+docker build -t saas/multi-renter:${version} --build-arg JAR_FILE=multi-renter/target/multi-renter.jar .
 if docker ps --format '{{.Names}}' | egrep "^saas-multi-renter-${type}$" &> /dev/null; then
     docker stop saas-multi-renter-${type}
 else
