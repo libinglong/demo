@@ -16,4 +16,4 @@ if docker container ls -a --format '{{.Names}}' | egrep "^saas-multi-renter-${ty
 else
     echo "there is no container saas-multi-renter-${type}"
 fi
-docker run -m 128M -d -v /opt/logs:/opt/logs/ -v /var/run/docker.sock:/var/run/docker.sock -p ${port}:8080 -p 5005:5005  --restart=always --name=saas-multi-renter-${type} saas/multi-renter:${version}
+docker run -m 136M -d -v /opt/logs:/opt/logs/ -v /var/run/docker.sock:/var/run/docker.sock -p ${port}:8080 -p 5005:5005  --restart=always --name=saas-multi-renter-${type} saas/multi-renter:${version}
